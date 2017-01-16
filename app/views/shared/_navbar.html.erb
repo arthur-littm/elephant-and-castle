@@ -2,20 +2,28 @@
   <div class="navbar-wagon-left hidden-xs hidden-sm">
     <a href="" class="navbar-wagon-item navbar-wagon-link">About</a>
     <%= link_to "Latest posts", posts_path, class: "navbar-wagon-item navbar-wagon-link" %>
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Travels</a>
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Inspirations</a>
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Look book</a>
+    <div class="dropdown show">
+      <a class="btn btn-secondary dropdown-toggle navbar-wagon-item navbar-wagon-link" href="https://example.com" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Categories <i class="fa fa-angle-down"></i>
+      </a>
+
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <% categories.each do |category| %>
+        <a href="#" class="dropdown-item"><%= category.name %></a>
+        <div class="dropdown-divider"></div>
+        <% end %>
+      </div>
+    </div>
   </div>
 
   <div class="navbar-wagon-item hidden-md hidden-lg">
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+      <ul class="dropdown-menu dropdown-menu-left navbar-wagon-dropdown-menu">
         <li><a href="#">Latest posts</a></li>
-        <li><a href="#">Travels</a></li>
-        <li><a href="#">Inspirations</a></li>
-        <li><a href="#">Look book</a></li>
-        <li><a href="#">About</a></li>
+        <% categories.each do |category| %>
+        <li><a href="#" class="dropdown-item"><%= category.name %></a></li>
+        <% end %>
       </ul>
     </div>
   </div>
