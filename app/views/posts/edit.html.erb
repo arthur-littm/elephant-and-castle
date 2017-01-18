@@ -3,9 +3,12 @@
   <%= simple_form_for @post do |f| %>
   <%= f.input :card_photo, as: :attachinary %>
   <%= f.input :title %>
+  <%= f.input :category_id, collection: @catgories %>
+  <%= f.input :introduction %>
   <%= f.bootsy_area :content %>
   <%= f.button :submit, class: "btn btn-primary" %>
   <%= link_to "Cancel", posts_path, class: "btn btn-default" %>
   <% end %>
 </div>
+
 

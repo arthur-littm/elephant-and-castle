@@ -45,9 +45,9 @@
 
             </div>
             <h4><%= post.title %></h4>
-            <p><%= post.content.html_safe %></p>
+            <%= post.content.html_safe %>
             <div class="post-index-card-date">
-              <p><%= post.created_at %></p>
+              <p><%= post.created_at.strftime('%b %d, %Y') %></p>
             </div>
           </div>
           <% end %>

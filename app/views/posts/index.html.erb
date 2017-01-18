@@ -1,8 +1,23 @@
 <div class="container full-screen">
-<div class="banner-title"><h1>ELEPHANT<small> &amp; </small>CASTLE</h1></div>
-  <% @posts.each do |post| %>
-  <h3><%= post.title %> <small><%= link_to "Edit", edit_post_path(post) %></small> </h3>
-  <p><%= post.content.html_safe %></p>
-  <% end %>
-  <%= link_to "New post", new_post_path %>
-</div>
+  <div class="banner-title">
+    <h1>ELEPHANT<small> &amp; </small>CASTLE</h1>
+  </div>
+  <div class="row">
+    <% @posts.each do |post| %>
+    <div class="col-xs-12 col-md-4">
+      <div class="post-index-card">
+        <div class="post-index-card-image" style="background-image: url(<% if post.card_photo %>
+          <%= cl_image_path post.card_photo.path %>
+          <% end %>);"></div>
+        </div>
+        <h4><%= post.title %></h4>
+        <%= post.content.html_safe %>
+        <div class="post-index-card-date">
+          <p><%= post.created_at.strftime('%b %d, %Y') %> <%= link_to "Edit post", edit_post_path(post) %>
+</p>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <%= link_to "New post", new_post_path %>
+  </div>
