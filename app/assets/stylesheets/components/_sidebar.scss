@@ -1,0 +1,48 @@
+.sidebar-content-title {
+  padding: 10px;
+  color: white;
+  text-align: center;
+  background-color: #211e1e;
+  border-radius: 3px;
+  margin: 10px auto;
+}
+
+.sidebar-content-image {
+  width: 100%;
+  margin: 10px auto;
+}
+
+.sidebar-content-text {
+  font-weight: 100;
+  text-align: justify;
+}
+
+.sidebar-content-links {
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  border-top: 0.5px solid rgba(33, 30, 30, 0.2);
+  border-bottom: 0.5px solid rgba(33, 30, 30, 0.2);
+}
+
+.sidebar-content-links i {
+  color: #211e1e;
+  font-size: 24px;
+
+}
+
+.sidebar-content-links i:hover {
+  color: #49B8F5;
+  font-size: 24px;
+
+}
+
+.sidebar-content-email {
+  padding: 10px;
+  background-color: rgba(128, 128, 128, 0.4);
+  border-radius: 3px;
+}
+
+.form-control {
+  margin-bottom: 10px;
+}
