@@ -13,8 +13,7 @@
         <h4><%= post.title %></h4>
         <%= post.content.html_safe %>
         <div class="post-index-card-date">
-          <p><%= post.created_at.strftime('%b %d, %Y') %> <%= link_to "Edit post", edit_post_path(post) %>
-</p>
+          <p><%= post.created_at.strftime('%b %d, %Y') %> <%= link_to "Edit post", edit_post_path(post) %></p>
         </div>
       </div>
       <% end %>
