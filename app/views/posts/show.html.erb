@@ -1,4 +1,9 @@
- <div class="container">
-   <h1><%= @post.title %></h1>
-   <p><%= @post.content %></p>
- </div>
+ <div class="container full-screen">
+   <div class="banner">
+    <div class="banner-title"><h1>ELEPHANT<small> &amp; </small>CASTLE</h1></div>
+    <div class="banner-image" style="background-image: url(<%= image_path @post.card_photo %>);">
+    </div>
+  </div>
+  <h1><%= @post.title %></h1>
+  <p><%= @post.content.html_safe %></p>
+</div>

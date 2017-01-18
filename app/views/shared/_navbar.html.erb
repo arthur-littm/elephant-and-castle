@@ -2,10 +2,7 @@
 
 
   <div class="navbar-wagon-left hidden-xs hidden-sm">
-    <a href="/" class="navbar-wagon-brand">
-      <%= image_tag "logo.png" %>
-    </a>
-    <a href="" class="navbar-wagon-item navbar-wagon-link">About</a>
+  <%= link_to "Home", root_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <%= link_to "Latest posts", posts_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <div class="dropdown show">
       <a class="btn btn-secondary dropdown-toggle navbar-wagon-item navbar-wagon-link" href="https://example.com" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -18,6 +15,10 @@
         <div class="dropdown-divider"></div>
         <% end %>
       </div>
+      <a href="" class="navbar-wagon-item navbar-wagon-link">Videos</a>
+      <a href="" class="navbar-wagon-item navbar-wagon-link">People</a>
+      <a href="" class="navbar-wagon-item navbar-wagon-link">About</a>
+
     </div>
   </div>
 
