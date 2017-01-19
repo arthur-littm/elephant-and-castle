@@ -20,9 +20,7 @@
               <% end %>
               <p><%= portrait.created_at.strftime('%b %d, %Y') %></p>
             </div>
-            <% if user_signed_in? && current_user.admin? %>
             <a href="<%= cl_image_path portrait.photo.path %>" data-lightbox="image-1" data-title="<%= portrait.description %>" class="post-index-card-link"><%= cl_image_tag portrait.photo.path, class: "hidden" %></a>
-            <% end %>
           </div>
         </div>
         <% end %>

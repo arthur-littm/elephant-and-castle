@@ -24,9 +24,7 @@
               <% end %>
               <p><%= video.created_at.strftime('%b %d, %Y') %></p>
             </div>
-            <% if user_signed_in? && current_user.admin? %>
             <%= link_to "", video_path(video), class: "post-index-card-link" %>
-            <% end %>
           </div>
         </div>
         <% end %>

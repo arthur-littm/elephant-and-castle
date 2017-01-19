@@ -24,9 +24,7 @@
               <% end %>
               <p><%= post.created_at.strftime('%b %d, %Y') %></p>
             </div>
-            <% if user_signed_in? && current_user.admin? %>
             <%= link_to "", post_path(post), class: "post-index-card-link" %>
-            <% end %>
           </div>
         </div>
         <% end %>
