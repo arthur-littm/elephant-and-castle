@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Category.all.destroy_all
 Post.all.destroy_all
+Video.all.destroy_all
 
 look_book = Category.create(name: "Fashion")
 travel = Category.create(name: "Travel")

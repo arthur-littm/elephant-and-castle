@@ -11,6 +11,6 @@ class ApplicationController < ActionController::Base
   end
 
   def set_categories
-    @categories = Category.all.order(name: :desc)
+    @categories = Category.all.order(name: :asc)
   end
 end
