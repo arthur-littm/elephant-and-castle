@@ -2,15 +2,15 @@
   <div class="banner">
     <%= render "shared/banner-title" %>
     <div class="banner-image" style="background-image: url(<%= cl_image_path @banner_post.card_photo.path %>);">
-    <div class="banner-category">
-      <p><%= @banner_post.category.name.upcase %></p>
-    </div>
-    <div class="banner-header">
-      <h3><%= @banner_post.title.upcase %></h3>
-    </div>
-    <div class="banner-action">
-      <%= link_to "READ MORE", post_path(@banner_post) %>
-    </div>
+      <div class="banner-category">
+        <p><%= @banner_post.category.name.upcase %></p>
+      </div>
+      <div class="banner-header">
+        <h3><%= @banner_post.title.upcase %></h3>
+      </div>
+      <div class="banner-action">
+        <%= link_to "READ MORE", post_path(@banner_post) %>
+      </div>
     </div>
   </div>
   <div class="row promo-cards">
@@ -44,6 +44,7 @@
             <h4>PEOPLE</h4>
           </div>
         </div>
+        <%= link_to "", portraits_path, class: "promo-card-link" %>
       </div>
     </div>
 
