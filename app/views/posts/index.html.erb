@@ -1,7 +1,5 @@
 <div class="container full-screen">
-  <div class="banner-title">
-    <h1>ELEPHANT<small> &amp; </small>CASTLE</h1>
-  </div>
+  <%= render "shared/banner-title" %>
   <div class="row">
     <% @posts.each do |post| %>
     <div class="col-xs-12 col-md-4">
@@ -17,14 +15,18 @@
           <p><%= post.introduction %></p>
         </div>
         <div class="post-index-card-date">
-        <p>By <strong>Adriana</strong></p>
-        <%= link_to "Edit", edit_post_path(post), class: "post-index-card-link-edit" %>
+          <p>By <strong><%= post.user.name %></strong></p>
+          <%= link_to "Edit", edit_post_path(post), class: "post-index-card-link-edit" %>
           <p><%= post.created_at.strftime('%b %d, %Y') %></p>
         </div>
+        <% if user_signed_in? && current_user.admin? %>
         <%= link_to "", post_path(post), class: "post-index-card-link" %>
+        <% end %>
       </div>
     </div>
     <% end %>
   </div>
+  <% if user_signed_in? && current_user.admin? %>
   <%= link_to "New post", new_post_path %>
+  <% end %>
 </div>

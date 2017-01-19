@@ -14,4 +14,4 @@ art = Category.create(name: "Art")
 fun = Category.create(name: "Fun")
 inspiration = Category.create(name: "Inspiration")
 
-user = User.create(email: "adriana@kosowski.com", password: "adriana", admin: true)
+user = User.create(email: "adriana@kosowski.com", password: "adriana", admin: true, name: "Adriana")

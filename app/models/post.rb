@@ -1,5 +1,7 @@
 class Post < ApplicationRecord
   belongs_to :category
+  belongs_to :user
+
   include Bootsy::Container
   has_attachment :card_photo
 
