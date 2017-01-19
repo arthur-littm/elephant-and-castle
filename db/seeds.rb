@@ -8,6 +8,8 @@
 Category.all.destroy_all
 Post.all.destroy_all
 Video.all.destroy_all
+Portrait.all.destroy_all
+User.all.destroy_all
 
 look_book = Category.create(name: "Fashion")
 travel = Category.create(name: "Travel")
@@ -17,5 +19,7 @@ inspiration = Category.create(name: "Inspirational")
 sports = Category.create(name: "Sports")
 food = Category.create(name: "Food")
 nightlife = Category.create(name: "Nightlife")
+music = Category.create(name: "Music")
 
 user = User.create(email: "adriana@kosowski.com", password: "adriana", admin: true, name: "Adriana")
+user = User.create(email: "arthur.littmann@gmail.com", password: "arthur", admin: true, name: "Arthur")
