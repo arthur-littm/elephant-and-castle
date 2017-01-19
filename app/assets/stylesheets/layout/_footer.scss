@@ -1,10 +1,11 @@
 // Your footer style
 .footer-container {
   position: relative;
+  left:0px;
+  bottom:0px;
+  width:100%;
   height: 70px;
   background-color: #211e1e;
-  bottom: 0;
-  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -25,15 +26,15 @@
     color: #4067A9;
     transition-duration: 1s;
   }
-   .bg-youtube:hover {
+  .bg-youtube:hover {
     color: #CB504A;
     transition-duration: 1s;
   }
-   .bg-instagram-footer:hover {
+  .bg-instagram-footer:hover {
     color: #FC3043;
     transition-duration: 1s;
   }
-   .bg-linkedin-footer:hover {
+  .bg-linkedin-footer:hover {
     color: #1085BA;
     transition-duration: 1s;
   }
