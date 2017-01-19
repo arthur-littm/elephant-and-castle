@@ -1,0 +1,21 @@
+.post-content {
+  text-align: justify;
+  margin: 10px auto;
+  font-weight: 100;
+}
+
+.post-description {
+  display: flex;
+  justify-content: space-between;
+  border-top: 0.5px solid rgba(33, 30, 30, 0.2);
+  padding-top: 10px;
+}
+
+.post-description p {
+  font-weight: 100;
+}
+
+.post-content img {
+  max-width: 100%;
+  margin: 0px;
+}

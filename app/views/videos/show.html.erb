@@ -1,0 +1,19 @@
+<div class="container full-screen">
+  <%= render "shared/banner-title" %>
+  <div class="row">
+    <div class="col-xs-12 col-md-8">
+      <div class="banner-title"><h3><%= @video.title.upcase %></h3></div>
+      <iframe width="100%" height="415" src="<%= @video_link %>" frameborder="0" allowfullscreen></iframe>
+      <div class="post-content">
+        <%= @video.content.html_safe %>
+      </div>
+      <div class="post-description">
+        <p>By <%= @video.user.name %></p>
+        <p><%= @video.created_at.strftime('%b %d, %Y') %></p>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-4">
+      <%= render "shared/sidebar", posts: @latest_posts, videos: @latest_videos %>
+    </div>
+  </div>
+</div>

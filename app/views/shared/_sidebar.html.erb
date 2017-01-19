@@ -27,7 +27,7 @@
     <div class="sidebar-content-title">
       <h5>LATEST POSTS</h5>
     </div>
-    <% @posts.first(5).each do |post| %>
+    <% posts.each do |post| %>
     <div class="product">
     <%= cl_image_tag post.card_photo.path, class: "product-image hidden-xs" %>
       <div class='product-body'>
@@ -37,3 +37,18 @@
       <%= link_to "", post_path(post), class: "product-link" %>
     </div>
     <% end %>
+
+    <div class="sidebar-content-title">
+      <h5>LATEST VIDEOS</h5>
+    </div>
+    <% videos.each do |video| %>
+    <div class="product">
+    <%= cl_image_tag video.card_photo.path, class: "product-image hidden-xs" %>
+      <div class='product-body'>
+        <h3><%= video.title %></h3>
+        <p><%= video.introduction[0..35] %>...</p>
+      </div>
+      <%= link_to "", video_path(video), class: "product-link" %>
+    </div>
+    <% end %>
+

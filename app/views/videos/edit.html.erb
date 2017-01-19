@@ -1,0 +1,16 @@
+<div class="container full-screen">
+  <h1>New video</h1>
+  <%= simple_form_for @video do |f| %>
+  <%= f.input :card_photo, as: :attachinary %>
+  <%= f.input :title %>
+  <%= f.input :category_id, collection: Category.all %>
+  <%= f.input :link %>
+  <%= f.input :introduction, required: true %>
+  <%= f.bootsy_area :content %>
+  <%= f.button :submit, class: "btn btn-primary" %>
+  <%= link_to "Cancel", videos_path, class: "btn btn-default" %>
+  <%= link_to "Delete", video_path(@video), method: :delete, class: "btn btn-danger" %>
+  <% end %>
+</div>
+
+

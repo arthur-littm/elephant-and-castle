@@ -2,8 +2,7 @@
 
 
   <div class="navbar-wagon-left hidden-xs hidden-sm">
-  <%= link_to "Home", root_path, class: "navbar-wagon-item navbar-wagon-link" %>
-    <%= link_to "Latest posts", posts_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "Home", root_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <div class="dropdown show">
       <a class="btn btn-secondary dropdown-toggle navbar-wagon-item navbar-wagon-link" href="https://example.com" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Categories <i class="fa fa-angle-down"></i>
@@ -15,7 +14,8 @@
         <div class="dropdown-divider"></div>
         <% end %>
       </div>
-      <a href="" class="navbar-wagon-item navbar-wagon-link">Videos</a>
+      <%= link_to "Latest posts", posts_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Videos", videos_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <a href="" class="navbar-wagon-item navbar-wagon-link">People</a>
       <a href="" class="navbar-wagon-item navbar-wagon-link">About</a>
 

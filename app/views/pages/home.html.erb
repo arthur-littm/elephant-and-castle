@@ -24,6 +24,7 @@
             <h4>VIDEOS</h4>
           </div>
         </div>
+        <%= link_to "", videos_path, class: "promo-card-link" %>
       </div>
     </div>
 
@@ -65,9 +66,35 @@
         <% end %>
       </div>
 
+
+      <div class="banner-title"><h2>RECENT VIDEOS</h2></div>
+      <div class="row">
+        <% @videos.each do |video| %>
+        <div class="col-xs-12 col-md-6">
+          <div class="post-index-card">
+            <div class="post-index-card-image" style="background-image: url(<%= cl_image_path video.card_photo.path %>);">
+
+            </div>
+            <div class="post-index-card-category">
+              <p><%= video.category.name.upcase %></p>
+            </div>
+            <div class="post-index-card-text">
+              <h4><%= video.title %></h4>
+              <p><%= video.introduction %></p>
+            </div>
+            <div class="post-index-card-date">
+              <p>By <strong><%= video.user.name %></strong></p>
+              <p><%= video.created_at.strftime('%b %d, %Y') %></p>
+            </div>
+            <%= link_to "", video_path(video), class: "post-index-card-link" %>
+          </div>
+        </div>
+        <% end %>
+      </div>
+
     </div>
     <div class="col-xs-12 col-md-4">
-     <%= render "shared/sidebar" %>
+     <%= render "shared/sidebar", posts: @latest_posts, videos: @latest_videos %>
    </div>
  </div>
 
