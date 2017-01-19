@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :get_post, only: [:show, :update, :edit]
+  before_action :get_post, only: [:show, :update, :edit, :destroy]
   def index
     @posts = Post.all.order(created_at: :asc)
   end
@@ -28,6 +28,14 @@ class PostsController < ApplicationController
   def update
     @post.update(post_params)
     if @post.save
+      redirect_to posts_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    if @post.destroy
       redirect_to posts_path
     else
       render :edit

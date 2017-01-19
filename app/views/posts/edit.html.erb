@@ -8,6 +8,7 @@
   <%= f.bootsy_area :content %>
   <%= f.button :submit, class: "btn btn-primary" %>
   <%= link_to "Cancel", posts_path, class: "btn btn-default" %>
+  <%= link_to "Delete", post_path(@post), method: :delete, class: "btn btn-danger" %>
   <% end %>
 </div>
 

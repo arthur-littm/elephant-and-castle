@@ -1,5 +1,6 @@
 // Your footer style
 .footer-container {
+  margin-top: 10px;
   position: relative;
   left:0px;
   bottom:0px;
@@ -57,4 +58,8 @@
   position: absolute;
   bottom: 5px;
   right: 5px;
+}
+
+.footer-container ul {
+  margin-bottom: 0 !important;
 }
