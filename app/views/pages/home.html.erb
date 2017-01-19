@@ -67,41 +67,9 @@
 
     </div>
     <div class="col-xs-12 col-md-4">
-
-      <div class="sidebar-content-title">
-        <h5>ABOUT US</h5>
-      </div>
-      <%= image_tag "adriana.jpg", class: "sidebar-content-image img-thumbnail" %>
-      <div class="sidebar-content-text">
-        <p>Welcome to <strong>Elephant &amp; Castle</strong>, my name is Adriana and I love photography, travelling and ... <a href="#">[read more]</a></p>
-      </div>
-      <ul class="list-inline sidebar-content-links">
-        <li><a href="https://www.facebook.com/adriekswsk"><i class="fa fa-facebook-official fa-fw"></i></a></li>
-        <li><a href="https://www.instagram.com/kosokiki/?hl=en"><i class="fa fa-instagram fa-fw"></i></a></li>
-        <li><a href=""><i class="fa fa-twitter fa-fw"></i></a></li>
-        <li><a href="https://www.youtube.com/channel/UC7-QSGYY7IO2o9t1nzvHuBg"><i class="fa fa-youtube fa-fw"></i></a></li>
-      </ul>
-
-      <div class="sidebar-content-title">
-        <h5>EMAIL US</h5>
-      </div>
-      <div class="sidebar-content-email form-group">
-        <form method="POST" action="http://formspree.io/arthur.littmann@gmail.com">
-          <input type="email" name="email" placeholder="Your email" class="form-control">
-          <input type="subject" name="subject" placeholder="Subject" class="form-control">
-          <textarea name="message" placeholder="Your message" class="form-control"></textarea>
-          <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane fa-fw"></i>  Send</button>
-        </form>
-      </div>
-
-      <div class="sidebar-content-title">
-        <h5>LATEST POSTS</h5>
-      </div>
-      <% @posts.first(5).each do |post| %>
-      <h4><%= post.title %></h4>
-      <% end %>
-    </div>
-  </div>
+     <%= render "shared/sidebar" %>
+   </div>
+ </div>
 
 </div>
 

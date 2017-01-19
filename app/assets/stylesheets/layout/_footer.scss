@@ -1,5 +1,6 @@
 // Your footer style
 .footer-container {
+  position: relative;
   height: 70px;
   background-color: #211e1e;
   bottom: 0;
@@ -49,4 +50,10 @@
     font-size: 12px;
     font-weight: 100;
   }
+}
+
+.footer-devise-link {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
 }

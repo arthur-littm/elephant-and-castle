@@ -5,8 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Category.all.destroy_all
+Post.all.destroy_all
+
 look_book = Category.create(name: "Fashion")
 travel = Category.create(name: "Travel")
 art = Category.create(name: "Art")
 fun = Category.create(name: "Fun")
 inspiration = Category.create(name: "Inspiration")
+
+user = User.create(email: "adriana@kosowski.com", password: "adriana", admin: true)
