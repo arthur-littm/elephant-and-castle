@@ -1,0 +1,40 @@
+<div class="container full-screen">
+  <%= render "shared/banner-title" %>
+  <div class="row">
+    <div class="col-xs-12 col-md-8">
+      <div class="banner-title"><h3>RECENT PORTRAITS</h3></div>
+      <div class="row">
+        <% @portraits.each do |portrait| %>
+        <div class="col-xs-12 col-md-6">
+          <div class="post-index-card">
+            <div class="post-index-card-image" style="background-image: url(<%= cl_image_path portrait.photo.path %>);">
+
+            </div>
+            <div class="post-index-card-text">
+              <h5><%= portrait.description %></h5>
+            </div>
+            <div class="post-index-card-date">
+              <p>By <strong><%= portrait.user.name %></strong></p>
+              <% if user_signed_in? && current_user.admin? %>
+              <%= link_to "Edit", edit_portrait_path(portrait), class: "post-index-card-link-edit" %>
+              <% end %>
+              <p><%= portrait.created_at.strftime('%b %d, %Y') %></p>
+            </div>
+            <% if user_signed_in? && current_user.admin? %>
+            <a href="<%= cl_image_path portrait.photo.path %>" data-lightbox="image-1" data-title="<%= portrait.description %>" class="post-index-card-link"><%= cl_image_tag portrait.photo.path, class: "hidden" %></a>
+            <% end %>
+          </div>
+        </div>
+        <% end %>
+        <% if user_signed_in? && current_user.admin? %>
+        <%= link_to "New portrait", new_portrait_path, class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-md-4">
+     <%= render "shared/sidebar", posts: @latest_posts, videos: @latest_videos %>
+   </div>
+ </div>
+
+</div>

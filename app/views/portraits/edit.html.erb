@@ -1,0 +1,12 @@
+<div class="container full-screen">
+  <h1>Edit portrait</h1>
+  <%= simple_form_for @portrait do |f| %>
+  <%= f.input :photo, as: :attachinary %>
+  <%= f.input :description %>
+  <%= f.button :submit, class: "btn btn-primary" %>
+  <%= link_to "Cancel", portraits_path, class: "btn btn-default" %>
+  <%= link_to "Delete", portrait_path(@portrait), method: :delete, class: "btn btn-danger" %>
+  <% end %>
+</div>
+
+

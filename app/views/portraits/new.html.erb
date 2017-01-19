@@ -1,0 +1,9 @@
+<div class="container full-screen">
+  <h1>New portrait</h1>
+  <%= simple_form_for @portrait do |f| %>
+  <%= f.input :photo, as: :attachinary, required: true %>
+  <%= f.input :description, required: true %>
+  <%= f.button :submit, class: "btn btn-primary" %>
+  <%= link_to "Cancel", portraits_path, class: "btn btn-default" %>
+  <% end %>
+</div>

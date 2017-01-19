@@ -13,7 +13,6 @@ class VideosController < ApplicationController
 
   def new
     @video = Video.new
-    @categories = Category.all
   end
 
   def create

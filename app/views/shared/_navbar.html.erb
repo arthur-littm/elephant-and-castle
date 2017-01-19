@@ -18,7 +18,7 @@
       </div>
       <%= link_to "Latest posts", posts_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Videos", videos_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <a href="" class="navbar-wagon-item navbar-wagon-link">People</a>
+      <%= link_to "People", portraits_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <a href="" class="navbar-wagon-item navbar-wagon-link">About</a>
 
     </div>
@@ -28,10 +28,10 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-left navbar-wagon-dropdown-menu">
-        <li><a href="#">Latest posts</a></li>
-        <% categories.each do |category| %>
-        <li><a href="#" class="dropdown-item"><%= category.name %></a></li>
-        <% end %>
+        <li><%= link_to "Latest posts", posts_path %></li>
+        <li><%= link_to "Videos", videos_path %></li>
+        <li><%= link_to "People", portraits_path %></li>
+
       </ul>
     </div>
   </div>

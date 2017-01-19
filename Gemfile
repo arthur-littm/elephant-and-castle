@@ -22,6 +22,8 @@ gem "attachinary", github: "assembler/attachinary"
 gem "jquery-fileupload-rails"
 gem "coffee-rails"
 gem 'devise'
+gem 'lightbox2-rails'
+
 
 
 group :development, :test do
