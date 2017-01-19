@@ -1,11 +1,11 @@
 <div class="container full-screen">
   <h1>New post</h1>
   <%= simple_form_for @post do |f| %>
-  <%= f.input :card_photo, as: :attachinary %>
-  <%= f.input :title %>
-  <%= f.input :category_id, collection: Category.all %>
-  <%= f.input :introduction %>
-  <%= f.bootsy_area :content %>
+  <%= f.input :card_photo, as: :attachinary, required: true %>
+  <%= f.input :title, required: true %>
+  <%= f.input :category_id, collection: Category.all, required: true %>
+  <%= f.input :introduction, required: true %>
+  <%= f.bootsy_area :content, required: true %>
   <%= f.button :submit, class: "btn btn-primary" %>
   <%= link_to "Cancel", posts_path, class: "btn btn-default" %>
   <% end %>
