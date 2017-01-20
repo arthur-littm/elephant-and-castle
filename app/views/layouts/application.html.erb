@@ -10,7 +10,7 @@
   <meta property="og:type"               content="article" />
   <meta property="og:title"              content="<%= (yield(:title) || "Elephant & Castle").squish %>" />
   <meta property="og:description"        content="<%= (yield(:introduction) || "Elephant & Castle").squish %>" />
-  <meta property="og:image"              content="<%= (yield(:image) || image_path "banner.jpg").squish %>" />
+  <meta property="og:image"              content="<%= (yield(:image) || image_path("banner.jpg")).squish %>" />
 
   <title>Elephant &amp; Castle</title>
   <%= csrf_meta_tags %>
