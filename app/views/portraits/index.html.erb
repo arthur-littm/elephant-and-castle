@@ -35,3 +35,19 @@
  </div>
 
 </div>
+
+<% content_for(:introduction) do %>
+  <%= @portraits.first.introduction %>
+<% end %>
+
+<% content_for(:title) do %>
+  <%= @portraits.first.title %>
+<% end %>
+
+<% content_for(:url) do %>
+  <%= request.original_url %>
+<% end %>
+
+<% content_for(:image) do %>
+  <%= cl_image_path @portraits.first.photo.path %>
+<% end %>
