@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <link rel="icon" href="<%= image_path "logo-black.png" %>">
 
-  <meta property="og:url"                content="<%= (yield(:url) || "https://elephant-and-castle.herokuapp.com/").squish %>" />
+  <meta property="og:url"                content="<%= (yield(:url) || request.original_url %>" />
   <meta property="og:title"              content="<%= (yield(:title) || "Elephant & Castle").squish %>" />
   <meta property="og:description"        content="<%= (yield(:introduction) || "Elephant & Castle").squish %>" />
   <meta property="og:image"              content="<%= (yield(:image) || image_path("about_banner.jpg")).squish %>" />
