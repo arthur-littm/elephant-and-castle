@@ -19,3 +19,19 @@
     </div>
   </div>
 </div>
+
+<% content_for(:introduction) do %>
+  <%= @post.introduction %>
+<% end %>
+
+<% content_for(:title) do %>
+  <%= @post.title %>
+<% end %>
+
+<% content_for(:url) do %>
+  <%= @post.introduction %>
+<% end %>
+
+<% content_for(:image) do %>
+  <%= cl_image_path @post.card_photo.path %>
+<% end %>
