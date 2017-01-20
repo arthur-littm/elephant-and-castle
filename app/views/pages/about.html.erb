@@ -1,1 +1,30 @@
-about
+<div class="container">
+  <div class="banner">
+    <%= render "shared/banner-title" %>
+    <div class="banner-image" style="background-image: url(<%= image_path 'about_banner.jpg' %>);">
+      <div class="banner-header">
+        <h3>ABOUT US</h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-md-8">
+      <div class="banner-title"><h2>ADRIANA</h2></div>
+      <div class="row">
+
+      </div>
+
+
+      <div class="banner-title"><h2>ORNELLA</h2></div>
+      <div class="row">
+
+      </div>
+
+    </div>
+    <div class="col-xs-12 col-md-4">
+     <%= render "shared/sidebar", posts: @latest_posts, videos: @latest_videos %>
+   </div>
+ </div>
+
+</div>
