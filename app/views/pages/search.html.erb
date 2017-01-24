@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="banner">
+    <%= render "shared/banner-title" %>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-md-8">
+      <div class="banner-title"><h2>POSTS</h2></div>
+      <div class="row">
+        <% if @products != nil %>
+        <% else %>
+        <p>NO POST MATCHING YOUR SEARCH</p>
+
+        <% end %>
+      </div>
+      <div class="banner-title"><h2>VIDEOS</h2></div>
+      <div class="row">
+      <% if @videos != nil %>
+        <% else %>
+        <p>NO VIDEO MATCHING YOUR SEARCH</p>
+
+        <% end %>
+      </div>
+      <div class="banner-title"><h2>PEOPLE</h2></div>
+      <div class="row">
+        <% if @people != nil %>
+        <% else %>
+        <p>NO POST MATCHING YOUR SEARCH</p>
+
+        <% end %>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-4">
+     <%= render "shared/sidebar", posts: @latest_posts, videos: @latest_videos %>
+   </div>
+ </div>
+
+</div>
+
+<% content_for(:introduction) do %>
+"Elephant &amp; Castle"
+<% end %>
+
+<% content_for(:title) do %>
+"Elephant &amp; Castle"
+<% end %>
+
+<% content_for(:url) do %>
+<%= request.original_url %>
+<% end %>
+
+<% content_for(:image) do %>
+<%= image_path "about_banner.jpg" %>
+<% end %>
