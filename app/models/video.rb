@@ -1,6 +1,8 @@
 class Video < ApplicationRecord
   belongs_to :category
   belongs_to :user
+  searchkick
+
 
   include Bootsy::Container
   has_attachment :card_photo
