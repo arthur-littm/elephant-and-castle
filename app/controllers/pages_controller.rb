@@ -7,9 +7,15 @@ class PagesController < ApplicationController
 
   def search
 
-      @posts = Post.search(params[:search])
-      @videos = Video.search(params[:search])
-      @portraits = Portrait.search(params[:search])
+    @posts = Post.search(params[:search])
+    Post.reindex
+
+    @videos = Video.search(params[:search])
+    Video.reindex
+
+    @portraits = Portrait.search(params[:search])
+    Portrait.reindex
+
 
   end
 end

@@ -1,7 +1,7 @@
 class Video < ApplicationRecord
   belongs_to :category
   belongs_to :user
-  # searchkick
+  searchkick
 
 
   include Bootsy::Container
@@ -12,13 +12,7 @@ class Video < ApplicationRecord
   validates :content, presence: true
   validates :category, presence: true
 
-  def self.search(search)
-    if search
-      self.where("LOWER(title) like ?", "%#{search.downcase}%")
-    else
-      self.all
-    end
-  end
+
 
   # def self.search_category(category)
   #   if search_category

@@ -23,7 +23,7 @@ gem "jquery-fileupload-rails"
 gem "coffee-rails"
 gem 'devise'
 gem 'lightbox2-rails'
-# gem 'searchkick'
+gem 'searchkick'
 
 
 
