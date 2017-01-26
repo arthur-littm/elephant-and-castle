@@ -6,16 +6,23 @@ class PagesController < ApplicationController
   end
 
   def search
+    if params[:category]
 
-    @posts = Post.search(params[:search])
-    Post.reindex
+      @posts = Post.all.where(category: params[:category])
 
-    @videos = Video.search(params[:search])
-    Video.reindex
+      @videos = Video.all.where(category: params[:category])
 
-    @portraits = Portrait.search(params[:search])
-    Portrait.reindex
 
+    else
+      @posts = Post.search(params[:search])
+      Post.reindex
+
+      @videos = Video.search(params[:search])
+      Video.reindex
+
+      @portraits = Portrait.search(params[:search])
+      Portrait.reindex
+    end
 
   end
 end

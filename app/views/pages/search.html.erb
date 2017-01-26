@@ -2,6 +2,7 @@
   <%= render "shared/banner-title" %>
   <div class="row">
     <div class="col-xs-12 col-md-8">
+
       <% if @posts.count != 0 %>
       <div class="banner-title"><h2>POSTS</h2></div>
       <div class="row text-center">
@@ -60,7 +61,7 @@
 
       </div>
       <% end %>
-      <% if @portraits.count != 0 %>
+      <% if @portraits && @portraits.count != 0 %>
       <div class="banner-title"><h2>PEOPLE</h2></div>
       <div class="row text-center">
 
@@ -89,6 +90,8 @@
       </div>
 
       <% end %>
+
+
     </div>
     <div class="col-xs-12 col-md-4">
      <%= render "shared/sidebar", posts: @latest_posts, videos: @latest_videos %>
