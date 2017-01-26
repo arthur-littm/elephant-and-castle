@@ -1,4 +1,5 @@
 class Video < ApplicationRecord
+  has_many :likes, as: :object
   belongs_to :category
   belongs_to :user
   searchkick

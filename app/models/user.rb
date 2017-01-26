@@ -5,6 +5,8 @@ class User < ApplicationRecord
   has_many :videos
   has_many :portraits
 
+
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 end
