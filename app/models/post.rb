@@ -11,9 +11,9 @@ class Post < ApplicationRecord
   validates :content, presence: true
   validates :category, presence: true
 
-  def self.search(search)
+   def self.search(search)
     if search
-      self.where("title like ?", "%#{search}%")
+      self.where("LOWER(title) like ?", "%#{search.downcase}%")
     else
       self.all
     end

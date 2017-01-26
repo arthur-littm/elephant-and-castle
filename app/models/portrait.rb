@@ -5,7 +5,7 @@ class Portrait < ApplicationRecord
 
   def self.search(search)
     if search
-      self.where("description like ?", "%#{search}%")
+      self.where("LOWER(description) like ?", "%#{search.downcase}%")
     else
       self.all
     end

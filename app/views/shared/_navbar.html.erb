@@ -12,7 +12,7 @@
 
     <div class="navbar-wagon-item">
       <div class="dropdown">
-        <p data-toggle="dropdown", class="dropdown-toggle navbar-wagon-item navbar-wagon-link" id="navbar-wagon-menu">Categories <i class="fa fa-angle-down fa-fw"></i></p>
+      <p data-toggle="dropdown", class="dropdown-toggle navbar-wagon-link" id="navbar-wagon-menu">Categories <i class="fa fa-angle-down fa-fw"></i></p>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <% categories.each do |category| %>
           <li><%= link_to category.name.capitalize, search_path(category: category) %></li>
@@ -38,7 +38,7 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
     <form class="navbar-wagon-search" action="/search" method="get">
-      <input type="text" name="search" id="search" value="DEOW" class="navbar-wagon-search-input" placeholder="Search">
+      <input type="text" name="search" id="search" class="navbar-wagon-search-input" placeholder="Search">
       <button type="submit" class="navbar-wagon-search-btn">
         <i class="fa fa-search"></i>
       </button>

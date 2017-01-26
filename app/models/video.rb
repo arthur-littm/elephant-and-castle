@@ -14,7 +14,7 @@ class Video < ApplicationRecord
 
   def self.search(search)
     if search
-      self.where("title like ?", "%#{search}%")
+      self.where("LOWER(title) like ?", "%#{search.downcase}%")
     else
       self.all
     end
