@@ -1,26 +1,24 @@
 <div class="navbar-wagon">
 
-
   <div class="navbar-wagon-left hidden-xs hidden-sm">
     <a href="/" class="navbar-wagon-brand">
       <%= image_tag "logo-white.png" %>
     </a>
-    <div class="dropdown show">
-      <a class="btn btn-secondary dropdown-toggle navbar-wagon-item navbar-wagon-link" href="https://example.com" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Categories <i class="fa fa-angle-down"></i>
-      </a>
 
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-        <% categories.each do |category| %>
-        <a href="#" class="dropdown-item"><%= category.name %></a>
-        <div class="dropdown-divider"></div>
-        <% end %>
+    <%= link_to "Latest posts", posts_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "Videos", videos_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "People", portraits_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "About", about_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
+    <div class="navbar-wagon-item">
+      <div class="dropdown">
+        <p data-toggle="dropdown", class="dropdown-toggle navbar-wagon-item navbar-wagon-link" id="navbar-wagon-menu">Categories <i class="fa fa-angle-down fa-fw"></i></p>
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <% categories.each do |category| %>
+          <li><%= link_to category.name.capitalize, search_path(category: category) %></li>
+          <% end %>
+        </ul>
       </div>
-      <%= link_to "Latest posts", posts_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Videos", videos_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "People", portraits_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "About", about_path, class: "navbar-wagon-item navbar-wagon-link" %>
-
     </div>
   </div>
 
@@ -32,21 +30,18 @@
         <li><%= link_to "Videos", videos_path %></li>
         <li><%= link_to "People", portraits_path %></li>
         <li><%= link_to "About", about_path %></li>
-
       </ul>
     </div>
   </div>
 
+
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
-
-    <!-- Search form -->
-    <form action="" class="navbar-wagon-search">
-      <input type="text" class="navbar-wagon-search-input" placeholder="Search">
+    <form class="navbar-wagon-search" action="/search" method="get">
+      <input type="text" name="search" id="search" value="DEOW" class="navbar-wagon-search-input" placeholder="Search">
       <button type="submit" class="navbar-wagon-search-btn">
         <i class="fa fa-search"></i>
       </button>
     </form>
-
   </div>
 </div>

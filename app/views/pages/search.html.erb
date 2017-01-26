@@ -1,28 +1,95 @@
 <div class="container">
-  <div class="banner">
-    <%= render "shared/banner-title" %>
-  </div>
+  <%= render "shared/banner-title" %>
   <div class="row">
     <div class="col-xs-12 col-md-8">
       <div class="banner-title"><h2>POSTS</h2></div>
-      <div class="row">
+      <div class="row text-center">
         <% if @products != nil %>
+        <% @posts.each do |post| %>
+        <div class="col-xs-12 col-md-6">
+          <div class="post-index-card">
+            <div class="post-index-card-image" style="background-image: url(<%= cl_image_path post.card_photo.path %>);">
+
+            </div>
+            <div class="post-index-card-category">
+              <p><%= post.category.name.upcase %></p>
+            </div>
+            <div class="post-index-card-text">
+              <h4><%= post.title %></h4>
+              <p><%= post.introduction %></p>
+            </div>
+            <div class="post-index-card-date">
+              <p>By <strong><%= post.user.name %></strong></p>
+              <p><%= post.created_at.strftime('%b %d, %Y') %></p>
+            </div>
+            <%= link_to "", post_path(post), class: "post-index-card-link" %>
+          </div>
+        </div>
+        <% end %>
+
         <% else %>
         <p>NO POST MATCHING YOUR SEARCH</p>
 
         <% end %>
       </div>
       <div class="banner-title"><h2>VIDEOS</h2></div>
-      <div class="row">
-      <% if @videos != nil %>
+      <div class="row text-center">
+        <% if @videos != nil %>
+        <% @videos.each do |video| %>
+        <div class="col-xs-12 col-md-6">
+          <div class="post-index-card">
+            <div class="post-index-card-image" style="background-image: url(<%= cl_image_path video.card_photo.path %>);">
+
+            </div>
+            <div class="post-index-card-category">
+              <p><%= video.category.name %></p>
+            </div>
+            <div class="post-index-card-text">
+              <h4><%= video.title %></h4>
+              <p><%= video.introduction %></p>
+            </div>
+            <div class="post-index-card-date">
+              <p>By <strong><%= video.user.name %></strong></p>
+              <% if user_signed_in? && current_user.admin? %>
+              <%= link_to "Edit", edit_video_path(video), class: "post-index-card-link-edit" %>
+              <% end %>
+              <p><%= video.created_at.strftime('%b %d, %Y') %></p>
+            </div>
+            <%= link_to "", video_path(video), class: "post-index-card-link" %>
+          </div>
+        </div>
+        <% end %>
+
         <% else %>
         <p>NO VIDEO MATCHING YOUR SEARCH</p>
 
         <% end %>
       </div>
       <div class="banner-title"><h2>PEOPLE</h2></div>
-      <div class="row">
-        <% if @people != nil %>
+      <div class="row text-center">
+        <% if @portraits != nil %>
+
+        <% @portraits.each do |portrait| %>
+        <div class="col-xs-12 col-md-6">
+          <div class="post-index-card">
+            <div class="post-index-card-image" style="background-image: url(<%= cl_image_path portrait.photo.path %>);">
+
+            </div>
+            <div class="post-index-card-text">
+              <h5><%= portrait.description %></h5>
+            </div>
+            <div class="post-index-card-date">
+              <p>By <strong><%= portrait.user.name %></strong></p>
+              <% if user_signed_in? && current_user.admin? %>
+              <%= link_to "Edit", edit_portrait_path(portrait), class: "post-index-card-link-edit" %>
+              <% end %>
+              <p><%= portrait.created_at.strftime('%b %d, %Y') %></p>
+            </div>
+            <a href="<%= cl_image_path portrait.photo.path %>" data-lightbox="image-1" data-title="<%= portrait.description %>" class="post-index-card-link"></a>
+          </div>
+        </div>
+        <% end %>
+
         <% else %>
         <p>NO POST MATCHING YOUR SEARCH</p>
 
