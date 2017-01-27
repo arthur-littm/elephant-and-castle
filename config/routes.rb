@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   mount Bootsy::Engine => '/bootsy', as: 'bootsy'
   root to: 'pages#home'
 
-  resources :posts
+  resources :posts do
+    post '/like', to: 'likes#add_like'
+  end
   resources :videos
   resources :portraits
 

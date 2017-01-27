@@ -252,6 +252,7 @@ DEPENDENCIES
   binding_of_caller
   bootstrap-sass
   bootsy
+  carrierwave
   cloudinary (= 1.1.0)
   coffee-rails
   devise

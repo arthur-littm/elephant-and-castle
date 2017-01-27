@@ -1,10 +1,11 @@
 class PostsController < ApplicationController
-  before_action :get_post, only: [:show, :update, :edit, :destroy]
+  before_action :get_post, only: [:show, :update, :edit, :destroy, :add_like]
   def index
     @posts = Post.all.order(created_at: :asc)
   end
 
   def show
+    @likes_counter = Like.all.where(post_id: @post.id).count
   end
 
   def new

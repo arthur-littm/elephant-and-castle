@@ -19,6 +19,7 @@ gem 'bootsy'
 gem "mini_magick"
 gem 'cloudinary', '1.1.0'
 gem "attachinary", github: "assembler/attachinary"
+gem 'carrierwave'
 gem "jquery-fileupload-rails"
 gem "coffee-rails"
 gem 'devise'
