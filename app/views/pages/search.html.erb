@@ -21,6 +21,7 @@
             </div>
             <div class="post-index-card-date">
               <p>By <strong><%= post.user.name %></strong></p>
+              <p><i class="fa fa-thumbs-up fa-fw" aria-hidden="true"></i> <%= post.likes.all.count %></p>
               <p><%= post.created_at.strftime('%b %d, %Y') %></p>
             </div>
             <%= link_to "", post_path(post), class: "post-index-card-link" %>
@@ -48,9 +49,7 @@
             </div>
             <div class="post-index-card-date">
               <p>By <strong><%= video.user.name %></strong></p>
-              <% if user_signed_in? && current_user.admin? %>
-              <%= link_to "Edit", edit_video_path(video), class: "post-index-card-link-edit" %>
-              <% end %>
+              <p><i class="fa fa-thumbs-up fa-fw" aria-hidden="true"></i> <%= video.likes.all.count %></p>
               <p><%= video.created_at.strftime('%b %d, %Y') %></p>
             </div>
             <%= link_to "", video_path(video), class: "post-index-card-link" %>
@@ -76,9 +75,6 @@
             </div>
             <div class="post-index-card-date">
               <p>By <strong><%= portrait.user.name %></strong></p>
-              <% if user_signed_in? && current_user.admin? %>
-              <%= link_to "Edit", edit_portrait_path(portrait), class: "post-index-card-link-edit" %>
-              <% end %>
               <p><%= portrait.created_at.strftime('%b %d, %Y') %></p>
             </div>
             <a href="<%= cl_image_path portrait.photo.path %>" data-lightbox="image-1" data-title="<%= portrait.description %>" class="post-index-card-link"></a>
