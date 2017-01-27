@@ -13,10 +13,12 @@
       </div>
       <div class="post-description">
         <p>By <%= @post.user.name %></p>
-        <p><%= @likes_counter %> likes</p>
+        <p><%=  pluralize(@likes_counter, 'like', 'likes')%></p>
         <p><%= @post.created_at.strftime('%b %d, %Y') %></p>
       </div>
+      <% if @can_like %>
       <%= render "likes/add-like" %>
+      <% end %>
     </div>
     <div class="col-xs-12 col-md-4">
       <%= render "shared/sidebar", posts: @latest_posts, videos: @latest_videos %>

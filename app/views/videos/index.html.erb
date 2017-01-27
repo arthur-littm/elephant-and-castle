@@ -21,6 +21,8 @@
               <p>By <strong><%= video.user.name %></strong></p>
               <% if user_signed_in? && current_user.admin? %>
               <%= link_to "Edit", edit_video_path(video), class: "post-index-card-link-edit" %>
+              <% else %>
+              <p><i class="fa fa-thumbs-up fa-fw" aria-hidden="true"></i> <%= video.likes.all.count %></p>
               <% end %>
               <p><%= video.created_at.strftime('%b %d, %Y') %></p>
             </div>

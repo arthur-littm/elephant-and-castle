@@ -8,6 +8,7 @@ class PostsController < ApplicationController
 
     @like = @post.likes.build(ip: request.remote_ip)
     @likes_counter = @post.likes.all.count
+    @can_like = @like.valid?
   end
 
   def new

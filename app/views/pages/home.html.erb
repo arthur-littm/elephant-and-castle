@@ -68,6 +68,7 @@
             </div>
             <div class="post-index-card-date">
               <p>By <strong><%= post.user.name %></strong></p>
+              <p><i class="fa fa-thumbs-up fa-fw" aria-hidden="true"></i> <%= post.likes.all.count %></p>
               <p><%= post.created_at.strftime('%b %d, %Y') %></p>
             </div>
             <%= link_to "", post_path(post), class: "post-index-card-link" %>
@@ -94,6 +95,7 @@
             </div>
             <div class="post-index-card-date">
               <p>By <strong><%= video.user.name %></strong></p>
+              <p><i class="fa fa-thumbs-up fa-fw" aria-hidden="true"></i> <%= video.likes.all.count %></p>
               <p><%= video.created_at.strftime('%b %d, %Y') %></p>
             </div>
             <%= link_to "", video_path(video), class: "post-index-card-link" %>
@@ -111,18 +113,18 @@
 </div>
 
 <% content_for(:introduction) do %>
-  "Elephant & Castle"
+"Elephant & Castle"
 <% end %>
 
 <% content_for(:title) do %>
-  "Elephant & Castle"
+"Elephant & Castle"
 <% end %>
 
 <% content_for(:url) do %>
-  <%= request.original_url %>
+<%= request.original_url %>
 <% end %>
 
 <% content_for(:image) do %>
-  <%= image_path "about_banner.jpg" %>
+<%= image_path "about_banner.jpg" %>
 <% end %>
 
