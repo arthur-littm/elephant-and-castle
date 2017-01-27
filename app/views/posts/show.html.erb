@@ -3,9 +3,7 @@
   <div class="row">
     <div class="col-xs-12 col-md-8">
       <div class="banner-title">
-      <%= link_to "Add like", post_like_path(@post), method: :post, class: "btn btn-primary" %>
-      <p><%= @likes_counter %> likes</p>
-      <h3><%= @post.title.upcase %></h3>
+        <h3><%= @post.title.upcase %></h3>
       </div>
       <div class="post-image">
         <%= cl_image_tag @post.card_photo.path %>
@@ -15,8 +13,12 @@
       </div>
       <div class="post-description">
         <p>By <%= @post.user.name %></p>
+        <p><%= @likes_counter %> likes</p>
         <p><%= @post.created_at.strftime('%b %d, %Y') %></p>
       </div>
+       <%= link_to post_like_path(@post), method: :post, {:controller => "likes", :action => "add_like", model: "post" }, class: "btn btn-primary" do %>
+          <i class="fa fa-thumbs-o-up fa-fw" aria-hidden="true"></i>
+        <% end %>
     </div>
     <div class="col-xs-12 col-md-4">
       <%= render "shared/sidebar", posts: @latest_posts, videos: @latest_videos %>
@@ -25,17 +27,17 @@
 </div>
 
 <% content_for(:introduction) do %>
-  <%= @post.introduction %>
+<%= @post.introduction %>
 <% end %>
 
 <% content_for(:title) do %>
-  <%= @post.title %>
+<%= @post.title %>
 <% end %>
 
 <% content_for(:url) do %>
-  <%= request.original_url %>
+<%= request.original_url %>
 <% end %>
 
 <% content_for(:image) do %>
-  <%= cl_image_path @post.card_photo.path %>
+<%= cl_image_path @post.card_photo.path %>
 <% end %>

@@ -6,8 +6,12 @@ Rails.application.routes.draw do
   resources :posts do
     post '/like', to: 'likes#add_like'
   end
-  resources :videos
-  resources :portraits
+  resources :videos do
+    post '/like', to: 'likes#add_like'
+  end
+  resources :portraits do
+    post '/like', to: 'likes#add_like'
+  end
 
   get '/about', to: 'pages#about'
   get '/search', to: 'pages#search'

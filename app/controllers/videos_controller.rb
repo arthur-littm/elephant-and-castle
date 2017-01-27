@@ -9,6 +9,8 @@ class VideosController < ApplicationController
     "https://www.youtube.com/watch?v=hEJnMQG9ev8"
     @video_id = @video.link.split("=").last
     @video_link = ("https://www.youtube.com/embed/" + @video_id).to_s
+
+    @likes_counter = @video.likes.all.count
   end
 
   def new

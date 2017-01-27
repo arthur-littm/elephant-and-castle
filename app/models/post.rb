@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-  has_many :likes, as: :object
+  has_many :likes, as: :likeable
   belongs_to :category
   belongs_to :user
   searchkick
@@ -12,13 +12,4 @@ class Post < ApplicationRecord
   validates :content, presence: true
   validates :category, presence: true
 
-
-
-  # def self.search_category(category)
-  #   if search_category
-  #     self.where("category like ?", "%#{search_category}%")
-  #   else
-  #     self.all
-  #   end
-  # end
 end

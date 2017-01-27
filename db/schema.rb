@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170127121047) do
+ActiveRecord::Schema.define(version: 20170127124715) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,15 +51,12 @@ ActiveRecord::Schema.define(version: 20170127121047) do
   end
 
   create_table "likes", force: :cascade do |t|
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
     t.string   "ip"
-    t.integer  "post_id"
-    t.integer  "portraitt_id"
-    t.integer  "video_id"
-    t.index ["portraitt_id"], name: "index_likes_on_portraitt_id", using: :btree
-    t.index ["post_id"], name: "index_likes_on_post_id", using: :btree
-    t.index ["video_id"], name: "index_likes_on_video_id", using: :btree
+    t.integer  "likeable_id"
+    t.string   "likeable_type"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["likeable_type", "likeable_id"], name: "index_likes_on_likeable_type_and_likeable_id", using: :btree
   end
 
   create_table "portraits", force: :cascade do |t|
@@ -67,8 +64,6 @@ ActiveRecord::Schema.define(version: 20170127121047) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "user_id"
-    t.integer  "like_id"
-    t.index ["like_id"], name: "index_portraits_on_like_id", using: :btree
     t.index ["user_id"], name: "index_portraits_on_user_id", using: :btree
   end
 
@@ -80,9 +75,7 @@ ActiveRecord::Schema.define(version: 20170127121047) do
     t.string   "introduction"
     t.integer  "category_id"
     t.integer  "user_id"
-    t.integer  "like_id"
     t.index ["category_id"], name: "index_posts_on_category_id", using: :btree
-    t.index ["like_id"], name: "index_posts_on_like_id", using: :btree
     t.index ["user_id"], name: "index_posts_on_user_id", using: :btree
   end
 
@@ -114,9 +107,7 @@ ActiveRecord::Schema.define(version: 20170127121047) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.string   "introduction"
-    t.integer  "like_id"
     t.index ["category_id"], name: "index_videos_on_category_id", using: :btree
-    t.index ["like_id"], name: "index_videos_on_like_id", using: :btree
     t.index ["user_id"], name: "index_videos_on_user_id", using: :btree
   end
 

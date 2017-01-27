@@ -9,8 +9,12 @@
       </div>
       <div class="post-description">
         <p>By <%= @video.user.name %></p>
+        <p><%= @likes_counter %> likes</p>
         <p><%= @video.created_at.strftime('%b %d, %Y') %></p>
       </div>
+       <%= link_to video_like_path(@video), method: :post, {:controller => "likes", :action => "add_like", model: "video" }, class: "btn btn-primary" do %>
+          <i class="fa fa-thumbs-o-up fa-fw" aria-hidden="true"></i>
+        <% end %>
     </div>
     <div class="col-xs-12 col-md-4">
       <%= render "shared/sidebar", posts: @latest_posts, videos: @latest_videos %>
@@ -19,17 +23,17 @@
 </div>
 
 <% content_for(:introduction) do %>
-  <%= @video.introduction %>
+<%= @video.introduction %>
 <% end %>
 
 <% content_for(:title) do %>
-  <%= @video.title %>
+<%= @video.title %>
 <% end %>
 
 <% content_for(:url) do %>
-  <%= request.original_url %>
+<%= request.original_url %>
 <% end %>
 
 <% content_for(:image) do %>
-  <%= cl_image_path @video.card_photo.path %>
+<%= cl_image_path @video.card_photo.path %>
 <% end %>

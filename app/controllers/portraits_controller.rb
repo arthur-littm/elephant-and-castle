@@ -5,7 +5,7 @@ class PortraitsController < ApplicationController
   end
 
   def show
-
+    @likes_counter = @portrait.likes.all.count
   end
 
   def new
