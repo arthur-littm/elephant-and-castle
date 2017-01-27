@@ -5,6 +5,8 @@ class PostsController < ApplicationController
   end
 
   def show
+
+    @like = @post.likes.build(ip: request.remote_ip)
     @likes_counter = @post.likes.all.count
   end
 

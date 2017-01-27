@@ -1,14 +1,14 @@
 class LikesController < ApplicationController
-  def add_like
-    @object = (params[:model].capitalize).find(params[:post_id])
-    like = Like.create(ip: request.remote_ip.to_s, likeable_id: @object.id, likeable_type: @object.class)
-    like.save
-    if @object.save
-      redirect_to params[:model]_path(@object)
-    else
-      render :show
-    end
 
+  def create
+    @like = Like.create(like_params)
+    redirect_to @like.likeable
+  end
+
+  private
+
+  def like_params
+    params.require(:like).permit(:ip, :likeable_type, :likeable_id)
   end
 
 end

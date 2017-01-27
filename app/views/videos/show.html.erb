@@ -12,9 +12,7 @@
         <p><%= @likes_counter %> likes</p>
         <p><%= @video.created_at.strftime('%b %d, %Y') %></p>
       </div>
-       <%= link_to video_like_path(@video), method: :post, {:controller => "likes", :action => "add_like", model: "video" }, class: "btn btn-primary" do %>
-          <i class="fa fa-thumbs-o-up fa-fw" aria-hidden="true"></i>
-        <% end %>
+      <%= render "likes/add-like" %>
     </div>
     <div class="col-xs-12 col-md-4">
       <%= render "shared/sidebar", posts: @latest_posts, videos: @latest_videos %>

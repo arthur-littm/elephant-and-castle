@@ -4,10 +4,6 @@ class PortraitsController < ApplicationController
     @portraits = Portrait.all.order(created_at: :asc)
   end
 
-  def show
-    @likes_counter = @portrait.likes.all.count
-  end
-
   def new
     @portrait = Portrait.new
   end
