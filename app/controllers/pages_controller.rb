@@ -19,9 +19,6 @@ class PagesController < ApplicationController
 
       @videos = Video.search(params[:search])
       Video.reindex
-
-      @portraits = Portrait.search(params[:search])
-      Portrait.reindex
     end
 
   end
