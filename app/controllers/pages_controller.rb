@@ -15,10 +15,10 @@ class PagesController < ApplicationController
 
     else
       @posts = Post.search(params[:search])
-      Post.reindex
+      # Post.reindex
 
       @videos = Video.search(params[:search])
-      Video.reindex
+      # Video.reindex
     end
 
   end

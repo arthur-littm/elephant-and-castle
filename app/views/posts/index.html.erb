@@ -22,7 +22,7 @@
               <% if user_signed_in? && current_user.admin? %>
               <%= link_to "Edit", edit_post_path(post), class: "post-index-card-link-edit" %>
               <% else %>
-              <p><i class="fa fa-thumbs-up fa-fw" aria-hidden="true"></i> <%= video.likes.all.count %></p>
+              <p><i class="fa fa-thumbs-up fa-fw" aria-hidden="true"></i> <%= post.likes.all.count %></p>
               <% end %>
               <p><%= post.created_at.strftime('%b %d, %Y') %></p>
             </div>
