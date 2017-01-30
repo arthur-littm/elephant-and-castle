@@ -1,7 +1,14 @@
 class PostsController < ApplicationController
   before_action :get_post, only: [:show, :update, :edit, :destroy, :add_like]
   def index
-    @posts = Post.all.order(created_at: :asc)
+    if params[:post] && params[:post] == 'recent'
+      @posts = Post.all.order(created_at: :desc)
+    elsif params[:post] && params[:post] == 'top'
+      @posts = Post.includes(:likes).order("likes.created_at asc")
+    else
+      @posts = Post.all.order(created_at: :desc)
+    end
+
   end
 
   def show
