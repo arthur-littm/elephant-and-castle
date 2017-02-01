@@ -2,10 +2,13 @@ class PostsController < ApplicationController
   before_action :get_post, only: [:show, :update, :edit, :destroy, :add_like]
   def index
     if params[:post] && params[:post] == 'recent'
+      @title = 'RECENT POSTS'
       @posts = Post.all.order(created_at: :desc)
     elsif params[:post] && params[:post] == 'top'
+      @title = 'TOP RATED POSTS'
       @posts = Post.includes(:likes).order("likes.created_at asc")
     else
+      @title = 'RECENT POSTS'
       @posts = Post.all.order(created_at: :desc)
     end
 
