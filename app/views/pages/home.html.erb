@@ -105,13 +105,12 @@
         </div>
         <% end %>
       </div>
-
     </div>
     <div class="col-xs-12 col-md-4">
-     <%= render "shared/sidebar", posts: @latest_posts, videos: @latest_videos %>
-   </div>
- </div>
-
+      <%= render "shared/sidebar", posts: @latest_posts, videos: @latest_videos %>
+    </div>
+  </div>
+  <%= render "shared/map" %>
 </div>
 
 <% content_for(:introduction) do %>

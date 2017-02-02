@@ -26,21 +26,21 @@
      <%= render "shared/sidebar", posts: @latest_posts, videos: @latest_videos %>
    </div>
  </div>
-
+ <%= render "shared/map" %>
 </div>
 
 <% content_for(:introduction) do %>
-  "Elephant & Castle"
+"Elephant & Castle"
 <% end %>
 
 <% content_for(:title) do %>
-  "Elephant & Castle"
+"Elephant & Castle"
 <% end %>
 
 <% content_for(:url) do %>
-  <%= request.original_url %>
+<%= request.original_url %>
 <% end %>
 
 <% content_for(:image) do %>
-  <%= image_path "about_banner.jpg" %>
+<%= image_path "about_banner.jpg" %>
 <% end %>
