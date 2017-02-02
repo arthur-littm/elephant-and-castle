@@ -5,8 +5,6 @@ class VideosController < ApplicationController
   end
 
   def show
-    "https://www.youtube.com/embed/hEJnMQG9ev8"
-    "https://www.youtube.com/watch?v=hEJnMQG9ev8"
     @video_id = @video.link.split("=").last
     @video_link = ("https://www.youtube.com/embed/" + @video_id).to_s
     @like = @video.likes.build(ip: request.remote_ip)
