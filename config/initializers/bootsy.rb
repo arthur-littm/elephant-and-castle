@@ -9,7 +9,7 @@ Bootsy.setup do |config|
   #   lists: true,
   #   html: false,
   #   link: true,
-    image: false,
+    image: true,
   #   color: true
   }
   #

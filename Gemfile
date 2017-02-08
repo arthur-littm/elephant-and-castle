@@ -20,7 +20,7 @@ gem "mini_magick"
 gem 'cloudinary', '1.1.0'
 gem "attachinary", github: "assembler/attachinary"
 gem 'carrierwave'
-# gem "fog", "~> 1.27", require: "fog/rackspace/storage"
+gem "fog"
 gem "jquery-fileupload-rails"
 gem "coffee-rails"
 gem 'devise'
