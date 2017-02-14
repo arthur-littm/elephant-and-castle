@@ -6,6 +6,13 @@ GIT
       cloudinary (~> 1.1.0)
       rails (>= 3.2)
 
+PATH
+  remote: /Users/alittmann/code/arthur-littm/bootsy
+  specs:
+    bootsy (2.3.1)
+      carrierwave (~> 0.11)
+      mini_magick (~> 4.5)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -61,9 +68,6 @@ GEM
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
-    bootsy (2.3.1)
-      carrierwave (~> 0.11)
-      mini_magick (~> 4.5)
     builder (3.2.3)
     byebug (9.0.6)
     carrierwave (0.11.2)
@@ -244,7 +248,7 @@ GEM
     hashie (3.4.6)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
-    i18n (0.7.0)
+    i18n (0.8.0)
     inflecto (0.0.2)
     ipaddress (0.8.3)
     jbuilder (2.6.1)
@@ -273,7 +277,7 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
     mimemagic (0.3.2)
-    mini_magick (4.6.0)
+    mini_magick (4.6.1)
     mini_portile2 (2.1.0)
     minitest (5.10.1)
     multi_json (1.12.1)
@@ -390,7 +394,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bootstrap-sass
-  bootsy (= 2.3.1)
+  bootsy!
   carrierwave
   cloudinary (= 1.1.0)
   coffee-rails
