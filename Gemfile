@@ -28,8 +28,6 @@ gem 'lightbox2-rails'
 gem 'searchkick'
 
 
-
-
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'
