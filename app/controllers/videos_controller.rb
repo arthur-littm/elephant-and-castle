@@ -14,7 +14,11 @@ class VideosController < ApplicationController
   end
 
   def new
-    @video = Video.new
+    if user_signed_in? && current_user.admin?
+      @video = Video.new
+    else
+      redirect_to root_path
+    end
   end
 
   def create
@@ -28,7 +32,11 @@ class VideosController < ApplicationController
   end
 
   def edit
-    @categories = Category.all
+    if user_signed_in? && current_user.admin?
+      @categories = Category.all
+    else
+      redirect_to root_path
+    end
   end
 
   def update

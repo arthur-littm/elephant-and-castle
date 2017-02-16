@@ -22,7 +22,11 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    if user_signed_in? && current_user.admin?
+      @post = Post.new
+    else
+      redirect_to root_path
+    end
   end
 
   def create
@@ -36,7 +40,11 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @categories = Category.all
+    if user_signed_in? && current_user.admin?
+      @categories = Category.all
+    else
+      redirect_to root_path
+    end
   end
 
   def update
@@ -49,10 +57,14 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    if @post.destroy
-      redirect_to posts_path
+    if user_signed_in? && current_user.admin?
+      if @post.destroy
+        redirect_to posts_path
+      else
+        render :edit
+      end
     else
-      render :edit
+      redirect_to root_path
     end
   end
 

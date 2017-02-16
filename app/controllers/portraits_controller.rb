@@ -5,7 +5,11 @@ class PortraitsController < ApplicationController
   end
 
   def new
-    @portrait = Portrait.new
+    if user_signed_in? && current_user.admin?
+      @portrait = Portrait.new
+    else
+      redirect_to root_path
+    end
   end
 
   def create
@@ -19,6 +23,11 @@ class PortraitsController < ApplicationController
   end
 
   def edit
+    if user_signed_in? && current_user.admin?
+
+    else
+      redirect_to root_path
+    end
   end
 
   def update
