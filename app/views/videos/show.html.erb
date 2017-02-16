@@ -13,7 +13,10 @@
         <p><%= @video.created_at.strftime('%b %d, %Y') %></p>
       </div>
       <% if @can_like %>
-        <%= render "likes/add-like" %>
+      <%= render "likes/add-like" %>
+      <% end %>
+      <% if user_signed_in? && current_user.admin? %>
+      <%= link_to "Edit", edit_video_path(@video), class: "btn btn-warning" %>
       <% end %>
     </div>
     <div class="col-xs-12 col-md-4">
