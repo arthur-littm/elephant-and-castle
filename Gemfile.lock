@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/arthur-littm/bootsy.git
-  revision: 928cd7ba3e9c440446d404dee676e99208b4ab5f
+  revision: b9dd613b1b42fdf107b2b3b28b33e02e878f68a2
   branch: cloudinary
   specs:
     bootsy (2.3.1)
