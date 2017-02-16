@@ -5,7 +5,7 @@
   <%= f.input :description %>
   <%= f.button :submit, class: "btn btn-primary" %>
   <%= link_to "Cancel", portraits_path, class: "btn btn-default" %>
-  <%= link_to "Delete", portrait_path(@portrait), method: :delete, class: "btn btn-danger" %>
+  <%= link_to "Delete", portrait_path(@portrait), method: :delete, class: "btn btn-danger", data: {confirm: 'Are you sure?'} %>
   <% end %>
 </div>
 

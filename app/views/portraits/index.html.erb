@@ -10,15 +10,16 @@
             <div class="post-index-card-image" style="background-image: url(<%= cl_image_path portrait.photo.path %>);">
 
             </div>
-            <div class="post-index-card-text">
-              <h5><%= portrait.description %></h5>
-            </div>
+
             <div class="post-index-card-date">
               <p>By <strong><%= portrait.user.name %></strong></p>
               <% if user_signed_in? && current_user.admin? %>
               <%= link_to "Edit", edit_portrait_path(portrait), class: "post-index-card-link-edit" %>
               <% end %>
               <p><%= portrait.created_at.strftime('%b %d, %Y') %></p>
+            </div>
+            <div class="post-index-card-text">
+              <p><%= portrait.description %></p>
             </div>
             <a href="<%= cl_image_path portrait.photo.path %>" data-lightbox="image-1" data-title="<%= portrait.description %>" class="post-index-card-link"></a>
           </div>
