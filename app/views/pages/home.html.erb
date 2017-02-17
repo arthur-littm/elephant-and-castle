@@ -1,6 +1,19 @@
 <div class="container-fluid not-padded">
 
+  <div class="banner">
+    <div class="banner-image" style="background-image: url(<%= cl_image_path @banner_post.card_photo.path %>);">
 
+      <div class="banner-category">
+        <p><%= @banner_post.category.name.upcase %></p>
+      </div>
+      <div class="banner-header">
+        <h3><%= @banner_post.title.upcase %></h3>
+      </div>
+      <div class="banner-action">
+        <%= link_to "READ MORE", post_path(@banner_post) %>
+      </div>
+    </div>
+  </div>
   <%= render "shared/banner-title" %>
 </div>
 <div class="container">
