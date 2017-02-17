@@ -11,16 +11,12 @@ Video.all.destroy_all
 Portrait.all.destroy_all
 User.all.destroy_all
 
-look_book = Category.create(name: "Fashion")
-travel = Category.create(name: "Travel")
-art = Category.create(name: "Art")
-fun = Category.create(name: "Fun")
-inspiration = Category.create(name: "Inspirational")
-sports = Category.create(name: "Sports")
-food = Category.create(name: "Food")
-nightlife = Category.create(name: "Nightlife")
-music = Category.create(name: "Music")
-culture = Category.create(name: "Culture")
+people = Category.create(name: "People Are Awesome", image_link: "https://static.pexels.com/photos/28017/pexels-photo-28017.jpg")
+travel = Category.create(name: "Travelling", image_link: "https://static.pexels.com/photos/7045/pexels-photo.jpeg")
+lifestyle = Category.create(name: "Fashion & Lifestyle", image_link: "https://static.pexels.com/photos/26549/pexels-photo-26549.jpg")
+fun = Category.create(name: "Fun & Nightlife", image_link: "https://static.pexels.com/photos/195280/pexels-photo-195280.jpeg")
+inspiration = Category.create(name: "Cultural & Inspirational", image_link: "https://static.pexels.com/photos/169617/pexels-photo-169617.jpeg")
+
 
 user = User.create(email: "adriana.kosowski.bba@edhec.com", password: "keepthepeach", admin: true, name: "Adriana")
 user = User.create(email: "arthur.littmann@gmail.com", password: "keepthepeach", admin: true, name: "Arthur")

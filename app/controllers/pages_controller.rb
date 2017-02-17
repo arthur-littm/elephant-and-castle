@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   def home
+    @categories = Category.all.order(name: :asc)
     @posts = Post.all.order(created_at: :desc).first(4)
     @videos = Video.all.order(created_at: :desc).first(4)
     @banner_post = Post.all.order(created_at: :asc).first
