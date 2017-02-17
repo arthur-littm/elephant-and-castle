@@ -15,4 +15,3 @@ travel = Category.create(name: "Travelling", image_link: "https://static.pexels.
 lifestyle = Category.create(name: "Fashion & Lifestyle", image_link: "https://static.pexels.com/photos/26549/pexels-photo-26549.jpg")
 fun = Category.create(name: "Fun & Nightlife", image_link: "https://static.pexels.com/photos/195280/pexels-photo-195280.jpeg")
 inspiration = Category.create(name: "Cultural & Inspirational", image_link: "https://static.pexels.com/photos/169617/pexels-photo-169617.jpeg")
-
