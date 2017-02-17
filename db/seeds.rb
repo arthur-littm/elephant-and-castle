@@ -9,7 +9,6 @@ Category.all.destroy_all
 Post.all.destroy_all
 Video.all.destroy_all
 Portrait.all.destroy_all
-User.all.destroy_all
 
 people = Category.create(name: "People Are Awesome", image_link: "https://static.pexels.com/photos/28017/pexels-photo-28017.jpg")
 travel = Category.create(name: "Travelling", image_link: "https://static.pexels.com/photos/7045/pexels-photo.jpeg")
@@ -17,6 +16,3 @@ lifestyle = Category.create(name: "Fashion & Lifestyle", image_link: "https://st
 fun = Category.create(name: "Fun & Nightlife", image_link: "https://static.pexels.com/photos/195280/pexels-photo-195280.jpeg")
 inspiration = Category.create(name: "Cultural & Inspirational", image_link: "https://static.pexels.com/photos/169617/pexels-photo-169617.jpeg")
 
-
-user = User.create(email: "adriana.kosowski.bba@edhec.com", password: "keepthepeach", admin: true, name: "Adriana")
-user = User.create(email: "arthur.littmann@gmail.com", password: "keepthepeach", admin: true, name: "Arthur")
