@@ -2,11 +2,12 @@
   <%= render "shared/banner-title" %>
   <div class="row">
     <div class="col-xs-12 col-md-8">
-      <div class="banner-title">
-        <h3><%= @post.title.upcase %></h3>
+      <div class="post-image" style="background-image: url(<%= cl_image_path @post.card_photo.path %>)">
+        <div class="post-image-border">
+        <div class="post-image-title">
+          <h4><%= @post.title %></h4>
+        </div>
       </div>
-      <div class="post-image">
-        <%= cl_image_tag @post.card_photo.path %>
       </div>
       <div class="post-content">
         <%= @post.content.html_safe %>
@@ -28,6 +29,8 @@
     </div>
   </div>
 </div>
+
+
 
 <% content_for(:introduction) do %>
 <%= @post.introduction %>
