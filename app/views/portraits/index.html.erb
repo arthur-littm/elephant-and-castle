@@ -2,7 +2,7 @@
   <%= render "shared/banner-title" %>
   <div class="row">
     <div class="col-xs-12 col-md-8">
-      <div class="banner-title"><h3>RECENT PORTRAITS</h3></div>
+      <div class="banner-title"><h3>RECENT PHOTOS</h3></div>
       <div class="row">
         <% @portraits.each do |portrait| %>
         <div class="col-xs-12 col-md-6">
@@ -37,3 +37,18 @@
 
 </div>
 
+<% content_for(:introduction) do %>
+  "Portraits"
+<% end %>
+
+<% content_for(:title) do %>
+  <%= @portraits.first.description %>
+<% end %>
+
+<% content_for(:url) do %>
+  <%= request.original_url %>
+<% end %>
+
+<% content_for(:image) do %>
+  <%= cl_image_path @portraits.first.photo.path %>
+<% end %>

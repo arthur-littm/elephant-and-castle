@@ -1,7 +1,7 @@
 class PortraitsController < ApplicationController
   before_action :get_portrait, only: [:show, :update, :edit, :destroy]
   def index
-    @portraits = Portrait.all.order(created_at: :asc)
+    @portraits = Portrait.all.order(created_at: :desc)
   end
 
   def new
