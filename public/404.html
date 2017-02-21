@@ -4,141 +4,120 @@
   <title>The page you were looking for doesn't exist (404)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-    @import url(http://fonts.googleapis.com/css?family=Gilda+Display);
+    @import url(http://fonts.googleapis.com/css?family=Raleway:300);
 
-html {
-  background: radial-gradient(#000, #111);
-  color: white;
-  overflow: hidden;
-  height: 100%;
-  user-select: none;
-}
+    $color1: white;
+    $color2: #342643;
+    $color3: #1FA9D6;
 
-.static {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  margin: 0;
-  padding: 0;
-  top: -100px;
-  opacity: 0.05;
-  z-index: 230;
-  user-select: none;
-  user-drag: none;
-}
+    *, *:before, *:after {
+      box-sizing: border-box;
+    }
+    html {
+      height: 100%;
+    }
+    body {
+      background: url(http://i.imgur.com/CZdBKjO.gif) no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Raleway', sans-serif;
+      background-color: $color2;
+      height: 100%;
+    }
 
-.error {
-  text-align: center;
-  font-family: 'Gilda Display', serif;
-  font-size: 95px;
-  font-style: italic;
-  text-align: center;
-  width: 100px;
-  height: 60px;
-  line-height: 60px;
-  margin: auto;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: -60px;
-  right: 0;
-  animation: noise 2s linear infinite;
-  overflow: default;
-}
+    .text-wrapper {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
 
-.error:after {
-  content: '404';
-  font-family: 'Gilda Display', serif;
-  font-size: 100px;
-  font-style: italic;
-  text-align: center;
-  width: 150px;
-  height: 60px;
-  line-height: 60px;
-  margin: auto;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  opacity: 0;
-  color: blue;
-  animation: noise-1 .2s linear infinite;
-}
+    .title {
+      font-size: 9em;
+      font-weight: 700;
+      color: $color1;
+      position:relative;
+    }
 
-.info {
-  text-align: center;
-  font-family: 'Gilda Display', serif;
-  font-size: 15px;
-  font-style: italic;
-  text-align: center;
-  width: 200px;
-  height: 60px;
-  line-height: 60px;
-  margin: auto;
-  position: absolute;
-  top: 140px;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  animation: noise-3 1s linear infinite;
-}
+    .subtitle {
+      font-size: 40px;
+      font-weight: 700;
+      color: $color1;
+      position:relative;
+    }
 
-.error:before {
-  content: '404';
-  font-family: 'Gilda Display', serif;
-  font-size: 100px;
-  font-style: italic;
-  text-align: center;
-  width: 100px;
-  height: 60px;
-  line-height: 60px;
-  margin: auto;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  opacity: 0;
-  color: red;
-  animation: noise-2 .2s linear infinite;
-}
+    .buttons {
+      margin: 30px;
+    }
 
-@keyframes noise-1 {
-  0%, 20%, 40%, 60%, 70%, 90% {opacity: 0;}
-  10% {opacity: .1;}
-  50% {opacity: .5; left: -6px;}
-  80% {opacity: .3;}
-  100% {opacity: .6; left: 2px;}
-}
+    .buttons a.button {
+      background-color: $color2;
+      font-weight: 700;
+      border: 2px solid $color1;
+      text-decoration: none;
+      padding: 15px;
+      text-transform: uppercase;
+      color: $color1;
+      border-radius: 26px;
+      transition: all 0.2s ease-in-out;
+    }
+    .buttons a.button:hover {
+      background-color: lighten($color2, 10%);
+      color: white;
+      transition: all 0.2s ease-in-out;
+    }
 
-@keyframes noise-2 {
-  0%, 20%, 40%, 60%, 70%, 90% {opacity: 0;}
-  10% {opacity: .1;}
-  50% {opacity: .5; left: 6px;}
-  80% {opacity: .3;}
-  100% {opacity: .6; left: -2px;}
-}
 
-@keyframes noise {
-  0%, 3%, 5%, 42%, 44%, 100% {opacity: 1; transform: scaleY(1);}
-  4.3% {opacity: 1; transform: scaleY(1.7);}
-  43% {opacity: 1; transform: scaleX(1.5);}
-}
 
-@keyframes noise-3 {
-  0%,3%,5%,42%,44%,100% {opacity: 1; transform: scaleY(1);}
-  4.3% {opacity: 1; transform: scaleY(4);}
-  43% {opacity: 1; transform: scaleX(10) rotate(60deg);}
-}
+    .subtitle:after, .title:after{
+      content:attr(data-content);
+      position:absolute;
+      left:2px;
+      text-shadow:-1px 0 red;
+      top:0;
+      color:$color1;
+      overflow:hidden;
+      clip:rect(0,900px,0,0);
+      animation:noise-anim 2s infinite linear alternate-reverse;
+    }
+
+    @keyframes noise-anim-2{
+      $steps:20;
+      @for $i from 0 through $steps{
+        #{percentage($i*(1/$steps))}{
+          clip:rect(random(200)+px,9999px,random(200)+px,0);
+        }
+      }
+    }
+    .subtitle:before, .title:before{
+      content:attr(data-content);
+      position:absolute;
+      left:-2px;
+      text-shadow:1px 0 blue;
+      top:0;
+      color:$color1;
+      overflow:hidden;
+      clip:rect(0,900px,0,0);
+      animation:noise-anim-2 3s infinite linear alternate-reverse;
+    }
+
   </style>
 </head>
 
 <body>
   <!-- This file lives in public/404.html -->
-  <div class="error">404</div>
-<br /><br />
-<span class="info">File not found</span>
-<img src="http://images2.layoutsparks.com/1/160030/too-much-tv-static.gif" class="static" />
+  <div class="text-wrapper">
+    <div class="title" data-content="404">
+      404
+    </div>
+
+    <div class="subtitle" data-content="Oops, the page you're looking for doesn't exist">
+      Oops, the page you're looking for doesn't exist.
+    </div>
+
+    <div class="buttons">
+      <a class="button" href="http://www.elephantandcastle.co/">Go to homepage</a>
+    </div>
+  </div>
 </body>
 </html>
