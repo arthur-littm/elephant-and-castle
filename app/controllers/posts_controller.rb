@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :get_post, only: [:show, :update, :edit, :destroy, :add_like]
+
   def index
     if params[:post] && params[:post] == 'recent'
       @title = 'RECENT POSTS'
@@ -11,11 +12,9 @@ class PostsController < ApplicationController
       @title = 'RECENT POSTS'
       @posts = Post.all.order(created_at: :desc)
     end
-
   end
 
   def show
-
     @like = @post.likes.build(ip: request.remote_ip)
     @likes_counter = @post.likes.all.count
     @can_like = @like.valid?
