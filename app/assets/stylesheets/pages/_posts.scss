@@ -40,13 +40,17 @@
   height: 80%;
   border: 0.5px solid rgba(255, 255, 255, 0.6);
   border-radius: 2px;
-  background-color: rgba(0, 0, 0, 0.15);
 }
 
 .post-image-title {
   background-color: white;
-  padding: 10px;
-  font-weight: bold;
-  text-shadow: 0 1px 1px rgba(0,0,0,0.6);
+  padding: 13px;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
   border-radius: 3px;
+}
+
+.post-image-title h1 {
+  font-weight: 300;
+  font-size: 20px;
+  margin: 0;
 }
