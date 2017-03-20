@@ -10,25 +10,12 @@
       <li><a href="https://www.instagram.com/kosokiki/?hl=en"><i class="fa fa-instagram fa-fw"></i></a></li>
       <li><a href="https://www.youtube.com/channel/UC7-QSGYY7IO2o9t1nzvHuBg"><i class="fa fa-youtube fa-fw"></i></a></li>
     </ul>
-
-    <div class="sidebar-content-title">
-      <h5>EMAIL ME</h5>
-    </div>
-    <div class="sidebar-content-email form-group">
-      <form method="POST" action="https://formspree.io/adriana.kosowski.bba@edhec.com">
-        <input type="email" name="email" placeholder="Your email" class="form-control">
-        <input type="subject" name="subject" placeholder="Subject" class="form-control">
-        <textarea name="message" placeholder="Your message" class="form-control"></textarea>
-        <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane fa-fw"></i>  Send</button>
-      </form>
-    </div>
-
     <div class="sidebar-content-title">
       <h5>LATEST POSTS</h5>
     </div>
     <% posts.each do |post| %>
     <div class="product">
-    <%= cl_image_tag post.card_photo.path, class: "product-image hidden-xs" %>
+      <%= cl_image_tag post.card_photo.path, class: "product-image hidden-xs" %>
       <div class='product-body'>
         <h3><%= post.title %></h3>
         <p><%= post.introduction[0..35] %>...</p>
@@ -42,7 +29,7 @@
     </div>
     <% videos.each do |video| %>
     <div class="product">
-    <%= cl_image_tag video.card_photo.path, class: "product-image hidden-xs" %>
+      <%= cl_image_tag video.card_photo.path, class: "product-image hidden-xs" %>
       <div class='product-body'>
         <h3><%= video.title %></h3>
         <p><%= video.introduction[0..35] %>...</p>
@@ -50,4 +37,14 @@
       <%= link_to "", video_path(video), class: "product-link" %>
     </div>
     <% end %>
-
+    <div class="sidebar-content-title">
+      <h5>EMAIL ME</h5>
+    </div>
+    <div class="sidebar-content-email form-group">
+      <form method="POST" action="https://formspree.io/adriana.kosowski.bba@edhec.com">
+        <input type="email" name="email" placeholder="Your email" class="form-control">
+        <input type="subject" name="subject" placeholder="Subject" class="form-control">
+        <textarea name="message" placeholder="Your message" class="form-control"></textarea>
+        <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane fa-fw"></i>  Send</button>
+      </form>
+    </div>
