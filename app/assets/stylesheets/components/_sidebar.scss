@@ -71,20 +71,24 @@
 }
 .product-body h3 {
   font-weight: bold;
-  font-size: 16px;
-  margin-top: 0;
+  font-size: 14px;
+  margin: 0 auto;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #B9BCBC;
 }
 .product-body p {
   font-weight: lighter;
   color: #999999;
   margin-bottom: 0;
+  font-size: 11px;
 }
 
 /* Product image */
 .product-image {
   border-radius: 10px;
-  margin-right: 20px;
+  margin-right: 10px;
   width: 140px;
+  box-shadow: 2px 2px 5px #dedede;
 }
 
 
@@ -92,6 +96,7 @@
 .product:hover {
   background: #f7f7fa;
   cursor: pointer;
+  box-shadow: 2px 2px 5px #dedede;
 }
 
 .product-link {
